@@ -31,12 +31,12 @@ jobs:
         working-directory: SkinCheckApp/android
         run: chmod +x gradlew
 
-      - name: Build debug APK
+      - name: Build release APK
         working-directory: SkinCheckApp/android
-        run: ./gradlew assembleDebug --no-daemon
+        run: ./gradlew assembleRelease --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: skin-check-debug-apk
-          path: SkinCheckApp/android/app/build/outputs/apk/debug/app-debug.apk
+          name: skin-check-release-apk
+          path: SkinCheckApp/android/app/build/outputs/apk/release/app-release.apk
